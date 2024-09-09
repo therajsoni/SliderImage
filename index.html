@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+   <div class="main_container">
+    <li class="silde"><img src="https://picsum.photos/id/237/200/300" alt="1">Lorem ipsum dolor sit amet consectetur.</li>
+    <li class="silde"><img src="https://picsum.photos/id/238/200/300" alt="2">Lorem ipsum dolor sit amet consectetur.</li>
+    <li class="silde"><img src="https://picsum.photos/id/239/200/300" alt="3">Lorem ipsum dolor sit amet consectetur.</li>
+    <li class="silde"><img src="https://picsum.photos/id/240/200/300" alt="4">Lorem ipsum dolor sit amet consectetur.</li>
+    <li class="silde"><img src="https://picsum.photos/id/236/200/300" alt="5">Lorem ipsum dolor sit amet consectetur.</li>
+   </div>
+   <button onclick="goPrev()">Previous</button>
+   <button onclick="goNext()">Next</button>
+   <script>
+    const sliders = document.querySelectorAll('.silde');
+    var couter = 0;
+    sliders.forEach((slider,index)=>{
+    slider.style.top = `${index*100}%`
+    })
+
+    function goPrev(){
+        couter--;
+        (couter === -1) ? couter = 0 : couter    
+    siderImage() 
+    }
+
+    function goNext(){
+        couter++;
+        (couter === 5) ? couter = 4 : couter   
+    siderImage()
+    }
+
+    function siderImage(){
+        sliders.forEach((slider,index)=>{
+    slider.style.transform = `translateY(${-couter*100}%)`
+    })
+        
+    }
+
+
+
+   </script>
+</body>
+</html>
